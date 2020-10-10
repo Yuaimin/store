@@ -1,0 +1,8 @@
+@mixin flex($jc: center, $ai: center, $fd: initial) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-direction: $fd;
+}
+
+$mainColor: #e3540b;

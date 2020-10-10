@@ -1,5 +1,8 @@
 export default {
   path: '/',
-  name: 'Home',
-  component: () => import('@/pages/Home')
+  name: 'home',
+  component: () => import('@/pages/home'),
+  meta: {
+    default: true
+  }
 }

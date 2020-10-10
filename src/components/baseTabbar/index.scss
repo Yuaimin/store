@@ -1,0 +1,37 @@
+.tabbar {
+  width: 100%;
+  @include flex(flex-start, flex-start);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  &-item {
+    height: 50px;
+    flex: 1;
+    @include flex($fd: column);
+    &.router-link-active.router-link-exact-active {
+      .tabbar-item-text {
+        color: $mainColor;
+        font-weight: bold;
+      }
+      .active {
+        display: block;
+      }
+      .default {
+        display: none;
+      }
+    }
+    &-icon {
+      width: 24px;
+      height: 24px;
+      &.active {
+        display: none;
+      }
+      &.default {
+        display: block;
+      }
+    }
+    &-text {
+      color: #333;
+      font-size: 11px;
+      margin-top: 2px;
+    }
+  }
+}
