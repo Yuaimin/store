@@ -9,15 +9,19 @@ export default defineComponent({
       value: ''
     }
   },
+  methods: {
+    change(event: Event) {
+      console.log(event)
+    }
+  },
   render() {
     const slot = {
       default: () => <div>default</div>,
       header: () => <div>header</div>
     }
-    console.log(this)
     return (
       <div>
-        <input type="text" v-model={this.value} />
+        <input type="text" v-model={this.value} onInput={this.change} />
         <div>{this.value}</div>
         <test v-slots={slot} />
       </div>
