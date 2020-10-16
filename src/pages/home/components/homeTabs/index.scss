@@ -1,0 +1,16 @@
+.van-tabs--line .van-tabs__wrap {
+  height: 35px;
+  padding-bottom: 5px;
+  box-sizing: border-box;
+}
+.van-tab--active {
+  color: $mainColor;
+}
+.van-tabs__line {
+  background-color: $mainColor;
+  border-radius: 20px;
+}
+
+.van-tabs__wrap--scrollable .van-tabs__nav--complete {
+  padding: 0 0 0.4rem;
+}

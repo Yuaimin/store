@@ -1,8 +1,6 @@
 import { defineComponent } from 'vue'
 import '@/App.scss'
 
-export default defineComponent({
-  render() {
-    return <router-view />
-  }
+export default defineComponent(() => {
+  return () => <router-view />
 })

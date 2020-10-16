@@ -1,9 +1,11 @@
 import { App } from 'vue'
-import { Button, NumberKeyboard } from 'vant'
+import { Tabs, Tab, Swipe, SwipeItem } from 'vant'
 
 export default {
   install(Vue: App): void {
-    Vue.component('v-button', Button)
-    Vue.component('v-number-keyboard', NumberKeyboard)
+    Vue.component('v-tabs', Tabs)
+    Vue.component('v-tab', Tab)
+    Vue.component('v-swiper', Swipe)
+    Vue.component('v-swiper-item', SwipeItem)
   }
 }

@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { Toast } from 'vant'
 
 const files = require.context('./modules', false, /.ts$/)
 
@@ -24,11 +25,16 @@ const router = createRouter({
       path: '/',
       component: () => import('@/layouts/public'),
       children: publicRoutes
+    },
+    {
+      path: '/:pathMatch(.*)',
+      redirect: '404'
     }
   ]
 })
 
 router.beforeEach((to, from, next) => {
+  Toast.clear()
   if (to.meta.title) document.title = to.meta.title
   next()
 })

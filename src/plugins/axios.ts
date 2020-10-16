@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = process.env.NODE_ENV === 'development' ? '/api' : process.env.VUE_APP_BASEURL
+const baseURL = process.env.NODE_ENV === 'development' ? '' : process.env.VUE_APP_BASEURL
 
 const http = axios.create({ baseURL })
 
@@ -17,7 +17,7 @@ http.interceptors.request.use(
 http.interceptors.response.use(
   response => {
     const {
-      data: { code, data, message }
+      data: { code, data }
     } = response
     if (code === 0) return data
     return null
