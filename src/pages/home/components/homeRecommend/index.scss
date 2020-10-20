@@ -1,0 +1,44 @@
+.recommend {
+  // padding: 0 15px;
+  &-container {
+    width: 100%;
+    background-color: #fff;
+    box-sizing: border-box;
+    overflow-x: scroll;
+    display: flex;
+    &-content {
+      display: flex;
+      overflow: visible;
+      padding: 18.5px 0 10px;
+      &-item {
+        margin-right: 11.5px;
+        flex: 1;
+        display: block;
+        &-image {
+          border-radius: 5px;
+          overflow: hidden;
+          img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+          }
+        }
+        &-name {
+          font-size: 12px;
+          color: #333;
+          margin-top: 4px;
+          line-height: 12px;
+        }
+        &-price {
+          color: $mainColor;
+          font-size: 14px;
+          line-height: 12px;
+          margin-top: 4px;
+        }
+        &:first-child {
+          margin-left: 11.5px;
+        }
+      }
+    }
+  }
+}

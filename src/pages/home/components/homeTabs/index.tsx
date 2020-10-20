@@ -1,10 +1,7 @@
 import { defineComponent, PropType } from 'vue'
 import './index.scss'
 
-interface TabsItem {
-  id: number
-  title: string
-}
+import { TabsItem } from '@/pages/home/types'
 
 export default defineComponent({
   props: {

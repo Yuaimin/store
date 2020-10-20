@@ -3,26 +3,19 @@ import './index.scss'
 import homeSearch from './components/homeSearch'
 import homeTabs from './components/homeTabs'
 import baseSwiper from '@/components/baseSwiper'
+import homeRecommend from './components/homeRecommend'
 import test from '@/components/test'
 
-interface Data {
-  show: boolean
-  tabs: Array<TabsItem>
-  banners: Array<string>
-}
-
-interface TabsItem {
-  id: number
-  title: string
-}
+import { Data } from './types'
 
 export default defineComponent({
-  components: { homeSearch, homeTabs, baseSwiper, test },
+  components: { homeSearch, homeTabs, baseSwiper, homeRecommend, test },
   data(): Data {
     return {
       show: false,
       tabs: [],
-      banners: []
+      banners: [],
+      recommend: []
     }
   },
   created() {
@@ -49,6 +42,39 @@ export default defineComponent({
 
         this.banners = ['https://b2c-qingdao-img.haier-ioc.com/content/uploads/data/cycleimage/1578864927335942089.jpg', 'https://b2c-qingdao-img.haier-ioc.com/content/uploads/data/cycleimage/1580450699644154520.jpeg']
 
+        this.recommend = [
+          {
+            id: 1,
+            name: '【炫研】原创新款女装西装领长袖系带显瘦时尚休闲印花中长款风衣外套女',
+            image: 'https://b2c-qingdao-img.haier-ioc.com/content/uploads/images/201907/goods_img/54060_P_1563749804470.jpg_640x640.jpg',
+            price: 201.9
+          },
+          {
+            id: 1,
+            name: '【炫研】原创新款女装西装领长袖系带显瘦时尚休闲印花中长款风衣外套女',
+            image: 'https://b2c-qingdao-img.haier-ioc.com/content/uploads/images/201907/goods_img/54060_P_1563749804470.jpg_640x640.jpg',
+            price: 200
+          },
+          {
+            id: 1,
+            name: '【炫研】原创新款女装西装领长袖系带显瘦时尚休闲印花中长款风衣外套女',
+            image: 'https://b2c-qingdao-img.haier-ioc.com/content/uploads/images/201907/goods_img/54060_P_1563749804470.jpg_640x640.jpg',
+            price: 200
+          },
+          {
+            id: 1,
+            name: '【炫研】原创新款女装西装领长袖系带显瘦时尚休闲印花中长款风衣外套女',
+            image: 'https://b2c-qingdao-img.haier-ioc.com/content/uploads/images/201907/goods_img/54060_P_1563749804470.jpg_640x640.jpg',
+            price: 200
+          },
+          {
+            id: 1,
+            name: '【炫研】原创新款女装西装领长袖系带显瘦时尚休闲印花中长款风衣外套女',
+            image: 'https://b2c-qingdao-img.haier-ioc.com/content/uploads/images/201907/goods_img/54060_P_1563749804470.jpg_640x640.jpg',
+            price: 200
+          }
+        ]
+
         this.$toast.clear()
         this.show = true
       }, 1000)
@@ -59,14 +85,14 @@ export default defineComponent({
       default: () => <div>default</div>,
       header: () => <div>header</div>
     }
-    const { show, tabs, banners } = this
+    const { show, tabs, banners, recommend } = this
     return show ? (
       <div class="container">
         <home-search />
         <homeTabs tabs={tabs} />
         <base-swiper banners={banners} />
-        <br />
         <test v-slots={slot} />
+        <home-recommend product-data={recommend} />
       </div>
     ) : null
   }

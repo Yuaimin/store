@@ -1,3 +1,14 @@
 * {
   font-family: PingFang SC !important;
 }
+
+img {
+  display: block;
+}
+
+// 隐藏滚动条
+.scroll-bar-none {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

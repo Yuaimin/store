@@ -1,0 +1,15 @@
+.base-title {
+  height: 50px;
+  @include flex(flex-start);
+  padding: 0 15px;
+  &-text {
+    font-size: 13px;
+    color: #333;
+    font-weight: bold;
+  }
+  &-subtext {
+    margin-left: 12px;
+    color: #999;
+    font-size: 11px;
+  }
+}
