@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import './index.scss'
 
 interface TabsItem {
@@ -9,7 +9,7 @@ interface TabsItem {
 export default defineComponent({
   props: {
     tabs: {
-      type: Array,
+      type: Array as PropType<Array<TabsItem>>,
       default: () => []
     }
   },
@@ -18,7 +18,7 @@ export default defineComponent({
     return (
       <v-tabs>
         {tabs.map(item => (
-          <v-tab title={(item as TabsItem).title} />
+          <v-tab title={item.title} />
         ))}
       </v-tabs>
     )

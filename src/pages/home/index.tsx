@@ -31,7 +31,6 @@ export default defineComponent({
   methods: {
     async getData() {
       this.$toast.loading('加载中...')
-      await this.$nextTick()
       setTimeout(() => {
         this.tabs = [
           {

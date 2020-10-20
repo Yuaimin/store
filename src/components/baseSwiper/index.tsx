@@ -1,10 +1,10 @@
 import './index.scss'
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 
 export default defineComponent({
   props: {
     banners: {
-      type: Array,
+      type: Array as PropType<Array<string>>,
       default: () => []
     }
   },
